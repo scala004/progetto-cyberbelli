@@ -134,7 +134,7 @@ if(email == "" || email == "undefined"){
 	document.getElementById("email").style.borderColor = "red";
 	verifica=false;
 }
-if(ValidateEmail(email)){
+else if(!ValidateEmail(email)){
 	document.getElementById("small-email").innerHTML = "L'indirizzo email è in un formato non corretto";
 	document.getElementById("small-email").style.color="red";
 	document.getElementById("email").style.borderColor = "red";
@@ -172,23 +172,38 @@ if(verifica==true){
 
 function resetDati(){
 	document.getElementById("id_scuola").style.borderColor = "#f0f0f0";
-	  document.getElementById("small-id_scuola").innerHTML = "";
+	document.getElementById("small-id_scuola").innerHTML = "";
+
+	document.getElementById("nome_scuola").style.borderColor = "#f0f0f0";
+	document.getElementById("small-nome_scuola").innerHTML = "";
+
+	document.getElementById("telefono").style.borderColor = "#f0f0f0";
+	document.getElementById("small-telefono").innerHTML = "";
+
+	document.getElementById("cap").style.borderColor = "#f0f0f0";
+	document.getElementById("small-CAP").innerHTML = "";
+
+	document.getElementById("provincia").style.borderColor = "#f0f0f0";
+	document.getElementById("small-provincia").innerHTML = "";
+
+	document.getElementById("citta").style.borderColor = "#f0f0f0";
+	document.getElementById("small-citta").innerHTML = "";
+
+	document.getElementById("email").style.borderColor = "#f0f0f0";
+	document.getElementById("small-email").innerHTML = "";
+
+	document.getElementById("via").style.borderColor = "#f0f0f0";
+	document.getElementById("small-via").innerHTML = "";
+
+	document.getElementById("sito").style.borderColor = "#f0f0f0";
+	document.getElementById("small-sito").innerHTML = "";	
 }
 
 
-function ValidateEmail(inputText)
-{
-var mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
-if(inputText.value.match(mailformat))
-{
-alert("You have entered a valid email address!");    //The pop up alert for a valid email address
-document.form1.text1.focus();
-return true;
-}
-else
-{
-alert("You have entered an invalid email address!");    //The pop up alert for an invalid email address
-document.form1.text1.focus();
-return false;
+function ValidateEmail(mail) {
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)){
+    return (true);
+}else{
+	return (false);
 }
 }
