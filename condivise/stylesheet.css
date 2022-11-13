@@ -105,13 +105,13 @@ nav .icon-burger .line {
 	height:60px;
 	border-radius: 50%;
 }
-.container_post .head .scuola{
+.container_post .head .username_scuola{
 	width:93%;
 	display: flex;
 	align-items: center;
 	justify-content: left;
 }
-.container_post .head .scuola p{
+.container_post .head .username_scuola p{
 	font-size:23px;
 }
 .container_post .media{
@@ -213,13 +213,13 @@ nav .icon-burger .line {
 	height:60px;
 	border-radius: 50%;
 }
-.container_scuola .head .scuola{
+.container_scuola .head .username_scuola{
 	width:93%;
 	display: flex;
 	align-items: center;
 	justify-content: left;
 }
-.container_scuola .head .scuola p{
+.container_scuola .head .username_scuola p{
 	font-size:23px;
 }
 .container_scuola .content_scuola {
@@ -307,7 +307,7 @@ nav .icon-burger .line {
 		width:50px;
 		height:50px;
 	}
-	.container_post .head .scuola p{
+	.container_post .head .username_scuola p{
 		font-size:20px;
 	}
 	.container_post .content_post {
@@ -323,7 +323,7 @@ nav .icon-burger .line {
 		width:50px;
 		height:50px;
 	}
-	.container_scuola .head .scuola p{
+	.container_scuola .head .username_scuola p{
 		font-size:20px;
 	}
 	.container_scuola .content_scuola {
