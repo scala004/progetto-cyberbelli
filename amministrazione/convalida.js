@@ -1,4 +1,4 @@
-function validazioneDati(){
+function validazioneScuola(){
 	
 var cod_mecc="";
 var nome="";
@@ -170,7 +170,7 @@ if(verifica==true){
 }
 
 
-function resetDati(){
+function resetScuola(){
 	document.getElementById("id_scuola").style.borderColor = "#f0f0f0";
 	document.getElementById("small-id_scuola").innerHTML = "";
 
