@@ -70,6 +70,12 @@ else if(tel.lenght>10){
 	document.getElementById("telefono").style.borderColor = "red";
 	verifica=false;
 }
+else if(isNaN(tel)){
+	document.getElementById("small-telefono").innerHTML = "Il numero di telefono è in un formato non corretto";
+	document.getElementById("small-telefono").style.color="red";
+	document.getElementById("telefono").style.borderColor = "red";
+	verifica=false;
+}
 else{
 	document.getElementById("small-telefono").innerHTML = "";
 	document.getElementById("telefono").style.borderColor = "green";
@@ -82,6 +88,12 @@ if(cap == "" || cap == "undefined"){
 }
 else if(cap.lenght<5 || cap.lenght>5){
 	document.getElementById("small-CAP").innerHTML = "Il CAP è inesistente";
+	document.getElementById("small-CAP").style.color="red";
+	document.getElementById("cap").style.borderColor = "red";
+	verifica=false;
+}
+else if(isNaN(cap)){
+	document.getElementById("small-CAP").innerHTML = "Il CAP non può contenere lettere";
 	document.getElementById("small-CAP").style.color="red";
 	document.getElementById("cap").style.borderColor = "red";
 	verifica=false;
@@ -122,6 +134,12 @@ if(email == "" || email == "undefined"){
 	document.getElementById("email").style.borderColor = "red";
 	verifica=false;
 }
+if(ValidateEmail(email)){
+	document.getElementById("small-email").innerHTML = "L'indirizzo email è in un formato non corretto";
+	document.getElementById("small-email").style.color="red";
+	document.getElementById("email").style.borderColor = "red";
+	verifica=false;
+}
 else{
 	document.getElementById("small-email").innerHTML = "";
 	document.getElementById("email").style.borderColor = "green";
@@ -151,7 +169,26 @@ if(verifica==true){
 }
 }
 
+
 function resetDati(){
 	document.getElementById("id_scuola").style.borderColor = "#f0f0f0";
 	  document.getElementById("small-id_scuola").innerHTML = "";
+}
+
+
+function ValidateEmail(inputText)
+{
+var mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+if(inputText.value.match(mailformat))
+{
+alert("You have entered a valid email address!");    //The pop up alert for a valid email address
+document.form1.text1.focus();
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");    //The pop up alert for an invalid email address
+document.form1.text1.focus();
+return false;
+}
 }
