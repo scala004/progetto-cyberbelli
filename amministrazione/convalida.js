@@ -207,3 +207,87 @@ function ValidateEmail(mail) {
 	return (false);
 }
 }
+
+
+function validazionePost(){
+
+	var tit = document.getElementById("titolo").value;
+	var desc = document.getElementById("descrizione").value;
+	var scuola = document.getElementById("scuola").value;
+	var youtube = document.getElementById("youtube").value;
+	var verifica=true;
+
+	if (tit == "" || tit == "undefined") {
+		document.getElementById("titolo").style.borderColor = "red";
+		document.getElementById("small-titolo").innerHTML = "Il titolo è obbligatorio";
+		document.getElementById("small-titolo").style.color="red";
+		verifica=false;
+  	}else{
+	  document.getElementById("small-titolo").innerHTML = "";
+	  document.getElementById("titolo").style.borderColor = "green";
+  	}
+	
+	if (desc == "" || desc == "undefined") {
+		document.getElementById("descrizione").style.borderColor = "red";
+		document.getElementById("small-descrizione").innerHTML = "La descrizione è obbligatoria";
+		document.getElementById("small-descrizione").style.color="red";
+		verifica=false;
+  	}else{
+	  document.getElementById("small-descrizione").innerHTML = "";
+	  document.getElementById("descrizione").style.borderColor = "green";
+  	}
+
+	if(scuola == "" || scuola == "undefined") {
+		document.getElementById("scuola").style.borderColor = "red";
+		document.getElementById("small-scuola").innerHTML = "La scuola è obbligatoria";
+		document.getElementById("small-scuola").style.color="red";
+		verifica=false;
+  	}else{
+		document.getElementById("small-scuola").innerHTML = "";
+	  	document.getElementById("scuola").style.borderColor = "green";
+	}
+
+	if(!validateYouTubeUrl(youtube)) {
+		document.getElementById("youtube").style.borderColor = "red";
+		document.getElementById("small-youtube").innerHTML = "Il link inserito non è di YouTube";
+		document.getElementById("small-youtube").style.color="red";
+		verifica=false;
+  	}else{
+		document.getElementById("small-youtube").innerHTML = "";
+	  	document.getElementById("youtube").style.borderColor = "green";
+	}
+
+	if(verifica==true){
+		document.getElementById("inserimento_post").submit();
+	}
+}
+
+
+function resetPost(){
+	document.getElementById("titolo").style.borderColor = "#f0f0f0";
+	document.getElementById("small-titolo").innerHTML = "";
+
+	document.getElementById("scuola").style.borderColor = "#f0f0f0";
+	document.getElementById("small-scuola").innerHTML = "";
+
+	document.getElementById("youtube").style.borderColor = "#f0f0f0";
+	document.getElementById("small-youtube").innerHTML = "";
+
+	document.getElementById("descrizione").style.borderColor = "#f0f0f0";
+	document.getElementById("small-descrizione").innerHTML = "";
+}
+
+
+function validateYouTubeUrl(youtube){
+    var url = youtube;
+        if (url != undefined || url != '') {
+            var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/;
+            var match = url.match(regExp);
+            if (match && match[2].length == 11) {
+                return (true);
+            }
+            else {
+                return (false);
+            }
+        }
+}
