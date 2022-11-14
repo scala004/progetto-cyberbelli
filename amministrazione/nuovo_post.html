@@ -36,13 +36,26 @@
 			
 			
 			<br>
-			<form action="../amministrazione/nuova_scuola.html" id="inserimento_post">
+			<form action="../amministrazione/a.php" id="inserimento_post">
 				
 
-                <div class="drop-zone">
-                    <span class="drop-zone__prompt">Drop file here or click to upload</span>
-                    <input type="file" name="myFile" class="drop-zone__input">
-                </div>
+
+
+				<div class="card">
+					<label>Inserisci immagini, file e/o video</label>
+					<div class="drag-area">
+						<span class="visible">
+							Drag & drop image here or
+							<span class="select" role="button">Browse</span>
+						</span>
+						<span class="on-drop">Drop images here</span>
+						<input id="file" name="file" type="file" class="file" multiple />
+					</div>
+			
+					<!-- IMAGE PREVIEW CONTAINER -->
+					<div class="container"></div>
+				</div>
+
 
                 <br> <br>
 				<div class="form-singolo">
@@ -96,5 +109,6 @@
 
 
 </div>
+<script src="test.js"></script>
 </body>
 </html>

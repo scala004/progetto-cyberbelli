@@ -247,14 +247,17 @@ function validazionePost(){
 	  	document.getElementById("scuola").style.borderColor = "green";
 	}
 
-	if(!validateYouTubeUrl(youtube)) {
+	
+	if((youtube!="" || youtube == "undefined") && !validateYouTubeUrl(youtube)) {
 		document.getElementById("youtube").style.borderColor = "red";
 		document.getElementById("small-youtube").innerHTML = "Il link inserito non è di YouTube";
 		document.getElementById("small-youtube").style.color="red";
 		verifica=false;
   	}else{
-		document.getElementById("small-youtube").innerHTML = "";
-	  	document.getElementById("youtube").style.borderColor = "green";
+		if(youtube!=""){
+			document.getElementById("small-youtube").innerHTML = "";
+	  		document.getElementById("youtube").style.borderColor = "green";
+		}	
 	}
 
 	if(verifica==true){
