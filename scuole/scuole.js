@@ -17,14 +17,14 @@ class Scuola {
   }
   print() {
     return `
-    <div class="post">
+    <div class="container_post">
       <div class="head">
         <div class="avatar">
           <img src="${this.imgRef}" alt="avatar">
         </div>
-        <div class="scuola"><p>${this.nome}</p></div>
+        <div class="username_scuola"><p>${this.nome}</p></div>
       </div>
-      <div class="content">
+      <div class="content_scuola">
         <div class="descrizione">
           <p>${this.descrizione}
           </p>

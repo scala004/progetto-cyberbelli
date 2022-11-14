@@ -47,7 +47,7 @@
 		<div class="descrizione">
 			<p></p>
 		</div>
-		<div class="link_scuola"><a href=""><b><p>Più informazioni...</p></b></a></div>
+		<div class="link_scuola"><a href=""><b><p>Vai al sito ufficiale</p></b></a></div>
 	</div>
 </div>
 </body>
