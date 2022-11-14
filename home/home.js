@@ -54,5 +54,3 @@ let posts = [
 for (let post of posts) {
   div.innerHTML += post.print();
 }
-
-

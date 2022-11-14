@@ -1,62 +1,62 @@
 let files = [],
-dragArea = document.querySelector('.drag-area'),
-input = document.querySelector('.drag-area input'),
-button = document.querySelector('.card button'),
-select = document.querySelector('.drag-area .select'),
-container = document.querySelector('.container');
+  dragArea = document.querySelector(".drag-area"),
+  input = document.querySelector(".drag-area input"),
+  button = document.querySelector(".card button"),
+  select = document.querySelector(".drag-area .select"),
+  container = document.querySelector(".container");
 
 /** CLICK LISTENER */
-select.addEventListener('click', () => input.click());
+select.addEventListener("click", () => input.click());
 
 /* INPUT CHANGE EVENT */
-input.addEventListener('change', () => {
-	let file = input.files;
-        
-    // if user select no image
-    if (file.length == 0) return;
-         
-	for(let i = 0; i < file.length; i++) {
-        if (!files.some(e => e.name == file[i].name)) files.push(file[i])
-    }
+input.addEventListener("change", () => {
+  let file = input.files;
 
-	showImages();
+  // if user select no image
+  if (file.length == 0) return;
+
+  for (let i = 0; i < file.length; i++) {
+    if (!files.some((e) => e.name == file[i].name)) files.push(file[i]);
+  }
+
+  showImages();
 });
 
 /** SHOW IMAGES */
 function showImages() {
-	container.innerHTML = files.reduce((prev, curr, index) => {
-		return `${prev}
+  container.innerHTML = files.reduce((prev, curr, index) => {
+    return `${prev}
 		    <div class="image">
 			    <span onclick="delImage(${index})">&times;</span>
 			    <img src="${URL.createObjectURL(curr)}" />
-			</div>`
-	}, '');
+			</div>`;
+  }, "");
 }
 
 /* DELETE IMAGE */
 function delImage(index) {
-   files.splice(index, 1);
-   showImages();
+  files.splice(index, 1);
+  showImages();
 }
 
 /* DRAG & DROP */
-dragArea.addEventListener('dragover', e => {
-	e.preventDefault()
-	dragArea.classList.add('dragover')
-})
+dragArea.addEventListener("dragover", (e) => {
+  e.preventDefault();
+  dragArea.classList.add("dragover");
+});
 
 /* DRAG LEAVE */
-dragArea.addEventListener('dragleave', e => {
-	e.preventDefault()
-	dragArea.classList.remove('dragover')
+dragArea.addEventListener("dragleave", (e) => {
+  e.preventDefault();
+  dragArea.classList.remove("dragover");
 });
 
 /* DROP EVENT */
-dragArea.addEventListener('drop', e => {
-	e.preventDefault()
-    dragArea.classList.remove('dragover');
+dragArea.addEventListener("drop", (e) => {
+  e.preventDefault();
+  dragArea.classList.remove("dragover");
 
-	let file = e.dataTransfer.files;
-	
-	showImages();
+  let file = e.dataTransfer.files;
+
+  showImages();
 });

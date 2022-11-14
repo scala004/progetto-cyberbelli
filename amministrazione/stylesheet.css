@@ -1,319 +1,297 @@
-
-*{
-	padding:0;
-	margin:0;
+* {
+  padding: 0;
+  margin: 0;
 }
 body {
-    background:#1e90ff;
-	font-family:sans-serif;
+  background: #1e90ff;
+  font-family: sans-serif;
 }
 nav {
-	position: fixed;
-	z-index: 10;
-	left: 0;
-	right: 0;
-	top: 0;
-	font-family: 'Montserrat', sans-serif;
-	padding: 0 5%;
-	height: 100px;
-	background-color: white;
-	box-shadow: 40px 0 10px #515151;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-family: "Montserrat", sans-serif;
+  padding: 0 5%;
+  height: 100px;
+  background-color: white;
+  box-shadow: 40px 0 10px #515151;
 }
 nav .logo {
-	float: left;
-	width: 40%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	font-size: 24px;
-	color: blue;
+  float: left;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: blue;
 }
 nav .links {
-	float: right;
-	padding: 0;
-	margin: 0;
-	width: 60%;
-	height: 100%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+  float: right;
+  padding: 0;
+  margin: 0;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 nav .links li {
-	list-style: none;
+  list-style: none;
 }
 nav .links a {
-	display: block;
-	padding: 1em;
-	font-size: 16px;
-	font-weight: bold;
-	color: blue;
-	text-decoration: none;
+  display: block;
+  padding: 1em;
+  font-size: 16px;
+  font-weight: bold;
+  color: blue;
+  text-decoration: none;
 }
 #nav-toggle {
-	position: absolute;
-	top: -100px;
+  position: absolute;
+  top: -100px;
 }
 nav .icon-burger {
-	display: none;
-	position: absolute;
-	right: 5%;
-	top: 50%;
-	transform: translateY(-50%);
+  display: none;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 nav .icon-burger .line {
-	width: 30px;
-	height: 5px;
-	background-color: blue;
-	margin: 5px;
-	border-radius: 3px;
-	transition: all .3s ease-in-out;
+  width: 30px;
+  height: 5px;
+  background-color: blue;
+  margin: 5px;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
 }
 @media screen and (max-width: 768px) {
-	nav .logo {
-		float: none;
-		width: auto;
-		justify-content: center;
-	}
-	nav .links {
-		float: none;
-		position: fixed;
-		z-index: 9;
-		left: 0;
-		right: 0;
-		top: 100px;
-		bottom: 100%;
-		width: auto;
-		height: auto;
-		flex-direction: column;
-		justify-content: space-evenly;
-		background-color: rgba(1,1,1,.8);
-		overflow: hidden;
-		box-sizing: border-box;
-		transition: all .5s ease-in-out;
-		color:white;
-	}
-	nav .links a {
-		font-size: 20px;
-		color:white;
-	}
-	nav :checked ~ .links {
-		bottom: 0;
-	}
-	nav .icon-burger {
-		display: block;
-	}
-	nav :checked ~ .icon-burger .line:nth-child(1) {
-		transform: translateY(10px) rotate(225deg);
-	}
-	nav :checked ~ .icon-burger .line:nth-child(3) {
-		transform: translateY(-10px) rotate(-225deg);
-	}
-	nav :checked ~ .icon-burger .line:nth-child(2) {
-		opacity: 0;
-	}
-	
+  nav .logo {
+    float: none;
+    width: auto;
+    justify-content: center;
+  }
+  nav .links {
+    float: none;
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    right: 0;
+    top: 100px;
+    bottom: 100%;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: rgba(1, 1, 1, 0.8);
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: all 0.5s ease-in-out;
+    color: white;
+  }
+  nav .links a {
+    font-size: 20px;
+    color: white;
+  }
+  nav :checked ~ .links {
+    bottom: 0;
+  }
+  nav .icon-burger {
+    display: block;
+  }
+  nav :checked ~ .icon-burger .line:nth-child(1) {
+    transform: translateY(10px) rotate(225deg);
+  }
+  nav :checked ~ .icon-burger .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-225deg);
+  }
+  nav :checked ~ .icon-burger .line:nth-child(2) {
+    opacity: 0;
+  }
 }
-#divisore{
-	margin-top:0;
-	padding-top:150px;
+#divisore {
+  margin-top: 0;
+  padding-top: 150px;
 }
-.content{
-	margin-bottom:5%;
-	margin-left:10%;
-	margin-right:10%;
-	box-shadow: 5px 10px 10px #515151;
-	border-style:solid;
-	border-color:rgba(255,255,238,1);
-	border-radius:25px;
-	border-width:10px;
-	background-color: rgba(255,255,238,1);
-	font-size:18px;
-	padding:3%;
-}
-
-.content .titolo{
-	text-align:center;
-	font-size:36px;
-}
-.content .sub{
-	text-align:center;
-	font-size:20px;
-	padding-bottom:1%;
-}
-.content .data_post{
-	text-align:right;
-	font-size:20px;
-	padding:0;
-	margin:0;
-	color:#1e90ff;
-}
-.content .image{
-	object-fit:contain;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 100%;
-	height: auto;
-}
-.content .video{
-	width: 50%;
-	height: 50%;
+.content {
+  margin-bottom: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  box-shadow: 5px 10px 10px #515151;
+  border-style: solid;
+  border-color: rgba(255, 255, 238, 1);
+  border-radius: 25px;
+  border-width: 10px;
+  background-color: rgba(255, 255, 238, 1);
+  font-size: 18px;
+  padding: 3%;
 }
 
-.content .descrizione{
-	padding-top:2%;
-	text-align:;
+.content .titolo {
+  text-align: center;
+  font-size: 36px;
+}
+.content .sub {
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 1%;
+}
+.content .data_post {
+  text-align: right;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  color: #1e90ff;
+}
+.content .image {
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+}
+.content .video {
+  width: 50%;
+  height: 50%;
 }
 
-
-
-
-
-
+.content .descrizione {
+  padding-top: 2%;
+  text-align: center;
+}
 
 /*CSS CHE RIGUARDA I FORM*/
-.content .form input{
-width: 100%;
-height: 25px;
-font-size: 14px;
-border: 2px solid #f0f0f0;
-border-radius: 4px;
-font-family: inherit;
-padding: 5px;
-
+.content .form input {
+  width: 100%;
+  height: 25px;
+  font-size: 14px;
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  font-family: inherit;
+  padding: 5px;
 }
 
-.content .form textarea{
-width: 100%;
-font-size: 14px;
-font-family: inherit;
-resize: vertical;
-border: 2px solid #f0f0f0;
+.content .form textarea {
+  width: 100%;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  border: 2px solid #f0f0f0;
 }
 
-.content .form .regione select{
-	width: 100%;
-	padding: 5px;
+.content .form .regione select {
+  width: 100%;
+  padding: 5px;
 }
 
-.content button{
+.content button {
   background-color: #8e44ad;
-	border: 2px solid #8e44ad;
-	border-radius: 4px;
-	color: #fff;
-	display: block;
-	font-family: inherit;
-	font-size: 16px;
-	padding: 10px;
-	margin-top: 20px;
-	width: 100%;
-	
+  border: 2px solid #8e44ad;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
 }
 
-.form-singolo{
-	margin-bottom: 25px;
+.form-singolo {
+  margin-bottom: 25px;
 }
 
-.form-singolo label{
-	border: 250px;
+.form-singolo label {
+  border: 250px;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /*CSS CHE RIGUARDA IL DRAG AND DROP*/
 .card {
-    height: auto;
-    padding: 15px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
-    overflow: hidden;
-    background: #fafbff;
+  height: auto;
+  padding: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  overflow: hidden;
+  background: #fafbff;
 }
 
 .card .drag-area {
-	width: 100%;
-	height: 160px;
-	border-radius: 5px;
-	border: 2px dashed #d5d5e1;
-	color: #c8c9dd;
-	font-size: 0.9rem;
-	font-weight: 500;
-	position: relative;
-	background: #dfe3f259;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	user-select: none;
-	-webkit-user-select: none;
-	margin-top: 10px;
+  width: 100%;
+  height: 160px;
+  border-radius: 5px;
+  border: 2px dashed #d5d5e1;
+  color: #c8c9dd;
+  font-size: 0.9rem;
+  font-weight: 500;
+  position: relative;
+  background: #dfe3f259;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  margin-top: 10px;
 }
 
 .card .drag-area .visible {
-	font-size: 18px;
+  font-size: 18px;
 }
 .card .select {
-    color: #5256ad;
-	margin-left: 5px;
-	cursor: pointer;
-	transition: 0.4s;
+  color: #5256ad;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
 .card .select:hover {
-	opacity: 0.6;
+  opacity: 0.6;
 }
 
 .card .container {
-	width: auto;
-	height: auto;
-	display: flex;
-	justify-content: flex-start;
-	align-items: flex-start;
-	
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .card .container .image {
-	margin-right: 15px;
-	height: 75px;
-	position: relative;
-	margin-bottom: 8px;
-	margin-top: 10px;
+  margin-right: 15px;
+  height: 75px;
+  position: relative;
+  margin-bottom: 8px;
+  margin-top: 10px;
 }
 
 .card .container .image img {
-	width: 100%;
-	height: 100%;
-	border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
 }
 
 .card .container .image span {
-	position: absolute;
-	top: -2px;
-	right: 9px;
-	font-size: 20px;
-	cursor: pointer;
+  position: absolute;
+  top: -2px;
+  right: 9px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 /* dragover class will used in drag and drop system */
 .card .drag-area.dragover {
-	background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .card .drag-area.dragover .on-drop {
-	display: inline;
-	font-size: 28px;
+  display: inline;
+  font-size: 28px;
 }
 
 .card input,
-.card .drag-area .on-drop, 
+.card .drag-area .on-drop,
 .card .drag-area.dragover .visible {
-	display: none;
+  display: none;
 }
