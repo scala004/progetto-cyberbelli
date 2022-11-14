@@ -1,30 +1,74 @@
+<!--Questo file contiene i div, le classi e gli id necessari alla formattazione della pagina home.html-->
 
 
-template post:
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<link rel="stylesheet" href="stylesheet.css">
 
-<div class="post">
+</head>
+<body>
+<nav>
+	<input id="nav-toggle" type="checkbox">
+	<div class="logo">CYBER<strong>BELLI</strong></div>
+	<ul class="links">
+		<li><a href="">Home</a></li>
+		<li><a href="">Calendario</a></li>
+		<li><a href="">Scuole</a></li>
+		<li><a href="">About</a></li>
+		<li><a href="">Amministrazione</a></li>
+	</ul>
+	<label for="nav-toggle" class="icon-burger">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+	</label>
+</nav>
+
+<div id="divisore">
+<p></p><!--Non inserire niente dentro a questo div-->
+</div>
+<!------------------------------------------------------post con img-------------------------------------------------->
+<div class="container_post">
 	<div class="head">
 		<div class="avatar">
-			<img src="avatar_ITTGIORGI.jpg" alt="avatar">
+			<img src="">
 		</div>
-		<div class="scuola"><p>ITT Giorgi - Brindisi</p></div>
+		<div class="username_scuola"><p>Nomescuola - Citta'</p></div>
+	</div>
+	<div class="media">
+		<img src="" alt="">
+	</div>
+	<div class="content_post">
+		<div class="descrizione">
+			<p></p>
+		</div>
+		<div class="dataPost"><p>gg/mm/AAAA</p></div>
+	</div>
+</div>
+
+<!------------------------------------------------------post con video-------------------------------------------------->
+<div class="container_post">
+	<div class="head">
+		<div class="avatar">
+			<img src="" alt="">
+		</div>
+		<div class="username_scuola"><p>Nomescuola - Citta'</p></div>
 	</div>
 	<div class="media">
 		<video controls>
-			<source src="ITT GIORGI_4BI.mp4" type="video/mp4">
+			<source src="" type="">
 		</video>
 	</div>
-	<div class="content">
-		<p>Scuola Aperta. Domenica mattina 6 Novembre 2022, dalle ore 10:00 alle ore 12:00, avrà luogo la
-			prima apertura dell’Istituto alla cittadinanza: “Anteprima ScuolAperta”. Studenti e genitori potranno
-			visitare e conoscere le peculiarità dell’ITT Giorgi attraverso un tour guidato che li accompagnerà a
-			scoprire, oltre agli indirizzi di studio offerti dalla scuola, la struttura scolastica e i suoi laboratori ed
-			inoltre si avrà la possibilità di incontrare la Dirigente Scolastica e diversi docenti.
-			L’ingresso è libero e non occorre prenotazione.
-		</p>
-		<p>	Scuola Aperta ritornerà nelle domeniche del 4 – 18 dicembre 2022 e del 15 – 22 gennaio 2023,
-			sempre negli stessi orari.
-		</p>
-		<div class="dataPost"><p>00/00/0000</p></div>
+	<div class="content_post">
+		<div class="descrizione">
+			<p></p>
+		</div>
+		<div class="dataPost"><p>gg/mm/AAAA</p></div>
 	</div>
 </div>
+</body>
+</html>
