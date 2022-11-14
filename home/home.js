@@ -13,19 +13,19 @@ class Post {
   }
   print() {
     return `
-    <div class="post">
+    <div class="container_post">
       <div class="head">
         <div class="avatar">
           <img src="${this.imgRef}" alt="avatar">
         </div>
-        <div class="scuola"><p>${this.scuola}</p></div>
+        <div class="username_scuola"><p>${this.scuola}</p></div>
       </div>
       <div class="media">
         <video controls>
           <source src="${this.videoRef}" type="video/mp4">
         </video>
       </div>
-      <div class="content">
+      <div class="content_post">
         <p>${this.descrizione}
         </p>
         <div class="dataPost"><p>${Date()}</p></div>
