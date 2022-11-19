@@ -1,5 +1,5 @@
 <?php  
-include("../amministrazione/config.php"); 
+include("../condivise/config.php"); 
 $id= $_POST['id_scuola'];
 $nome= $_POST['nome_scuola'];
 $email= $_POST['email'];
