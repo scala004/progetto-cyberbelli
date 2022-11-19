@@ -52,7 +52,7 @@ $result = MYSQLI_QUERY($connect,$query);
 					<img src='../scuole/img/a.jpg' alt='Logo Scuola'>
 				</a>
 			</div>
-			<div class=''>
+			<div class='username_scuola'>
 				<p>".$riga["nome_scuola"]."</p>
 				<p>".$riga["indirizzo"]."</p>
 				<p>".$riga["cap"]." ".$riga["citta"].", ".$riga["provincia"]."</p>
