@@ -34,7 +34,7 @@
 				<div class="form">
 					
 					<br>
-					<form action="../amministrazione/a.php" id="inserimento_post">
+					<form action="../amministrazione/inserisci_post.php" id="inserimento_post">
 
 						<div class="card">
 							<label>Inserisci immagini, file e/o video</label>
@@ -54,20 +54,38 @@
 						<br> <br>
 						<div class="form-singolo">
 							<label>Titolo<font color="red">*</font></label>
-							<input id="titolo" placeholder="Inserisci" >
+							<input name="titolo" id="titolo" placeholder="Inserisci" >
 							<small id="small-titolo"></small>
 						</div>
 						
 						<div class="form-singolo">
 							<label>Descrizione<font color="red">*</font></label>
-							<textarea id="descrizione" rows="10" cols="50" placeholder="Inserisci una descrizione del post"></textarea>
+							<textarea name="descrizione" id="descrizione" rows="10" cols="50" placeholder="Inserisci una descrizione del post"></textarea>
 							<small id="small-descrizione"></small>
 						</div>
 						
-						<div class="form-singolo">
-							<label>Scuola<font color="red">*</font></label>
-							<input id="scuola" placeholder="Codice Meccanografico o nome della scuola" >
-							<small id="small-scuola"></small>
+						<div class="form-singolo">		
+							<label>Scuola<font color="red">*</font></label> 						
+							<select name="scuola" id="scuola">
+								<option value="">Seleziona</option>	
+								<?php 
+									include("../amministrazione/config.php"); 
+									/* creiamo la query ... */
+
+									$query = "SELECT id_scuola, nome_scuola, citta FROM scuola"; 
+
+									/* ... ed eseguiamola */
+
+									$result = MYSQLI_QUERY($connect,$query);
+
+									/* Stampa i risultati della query*/
+									 
+									while ($riga = MySQLI_fetch_array($result)){
+										echo "<option value='".$riga["id_scuola"]."'>".$riga["nome_scuola"]." (".$riga["citta"].") - ".$riga["id_scuola"]."</option>";
+									   } 				 
+								?>
+							 </select>
+							 <small id="small-scuola"></small>
 						</div>
 
 						<div class="form-singolo">

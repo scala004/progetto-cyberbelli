@@ -8,6 +8,7 @@ function validazioneScuola() {
   var email = "";
   var indirizzo = "";
   var sito = "";
+  var regione = "";
   var verifica = true;
 
   cod_mecc = document.getElementById("id_scuola").value;
@@ -19,6 +20,7 @@ function validazioneScuola() {
   email = document.getElementById("email").value;
   indirizzo = document.getElementById("via").value;
   sito = document.getElementById("sito").value;
+  regione= document.forms.MyForm.regione.selectedIndex;
 
   if (cod_mecc == "" || cod_mecc == "undefined") {
     document.getElementById("id_scuola").style.borderColor = "red";
@@ -116,6 +118,16 @@ function validazioneScuola() {
     document.getElementById("small-provincia").innerHTML = "";
     document.getElementById("provincia").style.borderColor = "green";
   }
+  if (regione == "" || regione == "undefined") {
+    document.getElementById("small-provincia").innerHTML =
+      "La regione è obbligatoria";
+    document.getElementById("small-regione").style.color = "red";
+    document.getElementById("regione").style.borderColor = "red";
+    verifica = false;
+  } else {
+    document.getElementById("small-regione").innerHTML = "";
+    document.getElementById("regione").style.borderColor = "green";
+  }
   if (citta == "" || citta == "undefined") {
     document.getElementById("small-citta").innerHTML =
       "La città è obbligatorio";
@@ -193,6 +205,9 @@ function resetScuola() {
 
   document.getElementById("sito").style.borderColor = "#f0f0f0";
   document.getElementById("small-sito").innerHTML = "";
+  
+  document.getElementById("regione").style.borderColor = "#f0f0f0";
+  document.getElementById("small-regione").innerHTML = "";
 }
 
 function ValidateEmail(mail) {
@@ -206,7 +221,7 @@ function ValidateEmail(mail) {
 function validazionePost() {
   var tit = document.getElementById("titolo").value;
   var desc = document.getElementById("descrizione").value;
-  var scuola = document.getElementById("scuola").value;
+  var scuola = document.forms.MyForm.scuola.selectedIndex;
   var youtube = document.getElementById("youtube").value;
   var verifica = true;
 
