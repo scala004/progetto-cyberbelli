@@ -49,7 +49,7 @@ $result = MYSQLI_QUERY($connect,$query);
 		<div class='head'>
 			<div class='avatar'>
 				<a href='https://".$riga["sito"]."' target='_blank'>
-					<img src='../scuole/img/a.jpg' alt='Logo Scuola'>
+					<img src='".$riga["logo_scuola"]."' alt='Logo Scuola'>
 				</a>
 			</div>
 			<div class='username_scuola'>

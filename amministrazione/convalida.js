@@ -20,7 +20,7 @@ function validazioneScuola() {
   email = document.getElementById("email").value;
   indirizzo = document.getElementById("via").value;
   sito = document.getElementById("sito").value;
-  regione= document.forms.MyForm.regione.selectedIndex;
+  regione= document.getElementById("regione").selectedIndex;
 
   if (cod_mecc == "" || cod_mecc == "undefined") {
     document.getElementById("id_scuola").style.borderColor = "red";
@@ -119,7 +119,7 @@ function validazioneScuola() {
     document.getElementById("provincia").style.borderColor = "green";
   }
   if (regione == "" || regione == "undefined") {
-    document.getElementById("small-provincia").innerHTML =
+    document.getElementById("small-regione").innerHTML =
       "La regione è obbligatoria";
     document.getElementById("small-regione").style.color = "red";
     document.getElementById("regione").style.borderColor = "red";
@@ -219,22 +219,10 @@ function ValidateEmail(mail) {
 }
 
 function validazionePost() {
-  var tit = document.getElementById("titolo").value;
   var desc = document.getElementById("descrizione").value;
-  var scuola = document.forms.MyForm.scuola.selectedIndex;
+  var scuola = document.getElementById("scuola").selectedIndex;
   var youtube = document.getElementById("youtube").value;
   var verifica = true;
-
-  if (tit == "" || tit == "undefined") {
-    document.getElementById("titolo").style.borderColor = "red";
-    document.getElementById("small-titolo").innerHTML =
-      "Il titolo è obbligatorio";
-    document.getElementById("small-titolo").style.color = "red";
-    verifica = false;
-  } else {
-    document.getElementById("small-titolo").innerHTML = "";
-    document.getElementById("titolo").style.borderColor = "green";
-  }
 
   if (desc == "" || desc == "undefined") {
     document.getElementById("descrizione").style.borderColor = "red";
@@ -280,8 +268,6 @@ function validazionePost() {
 }
 
 function resetPost() {
-  document.getElementById("titolo").style.borderColor = "#f0f0f0";
-  document.getElementById("small-titolo").innerHTML = "";
 
   document.getElementById("scuola").style.borderColor = "#f0f0f0";
   document.getElementById("small-scuola").innerHTML = "";
