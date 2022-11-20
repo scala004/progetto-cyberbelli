@@ -292,3 +292,45 @@ function validateYouTubeUrl(youtube) {
     }
   }
 }
+
+function Conf_elim() {
+	var cod_mecc = "";
+	var conf_email = "";
+	
+	cod_mecc = document.getElementById("id_scuola").value;
+	conf_email = document.getElementById("email").value;
+	
+	if (cod_mecc == "" || cod_mecc == "undefined") {
+    document.getElementById("id_scuola").style.borderColor = "red";
+    document.getElementById("small-id_scuola").innerHTML =
+      "Il codice meccanografico è obbligatorio";
+    document.getElementById("small-id_scuola").style.color = "red";
+    verifica = false;
+  } else if (cod_mecc.length < 10) {
+    document.getElementById("small-id_scuola").innerHTML =
+      "Il codice meccanografico è troppo corto";
+    document.getElementById("small-id_scuola").style.color = "red";
+    document.getElementById("id_scuola").style.borderColor = "red";
+    verifica = false;
+  } else {
+    document.getElementById("small-id_scuola").innerHTML = "";
+    document.getElementById("id_scuola").style.borderColor = "green";
+  }
+  
+    if (conf_email == "" || conf_email == "undefined") {
+    document.getElementById("small-email").innerHTML =
+      "L'indirizzo email è obbligatorio";
+    document.getElementById("small-email").style.color = "red";
+    document.getElementById("email").style.borderColor = "red";
+    verifica = false;
+  } else if (!ValidateEmail(conf_email)) {
+    document.getElementById("small-email").innerHTML =
+      "L'indirizzo email è in un formato non corretto";
+    document.getElementById("small-email").style.color = "red";
+    document.getElementById("email").style.borderColor = "red";
+    verifica = false;
+  } else {
+    document.getElementById("small-email").innerHTML = "";
+    document.getElementById("email").style.borderColor = "green";
+  }
+}

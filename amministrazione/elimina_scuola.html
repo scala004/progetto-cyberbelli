@@ -30,6 +30,32 @@
                 <div class="titolo">
 					Elimina scuola
 				</div>
+				<div class="form">
+					
+					<br>
+					<form action="../amministrazione/elimina_scuola.php" id="inserimento_scuola" method="POST">
+					
+						<div class="form-singolo">
+						
+							<div style="float:left; width:100%;">
+								<label>Codice Meccanografico<font color="red">*</font></label>
+								<input name="id_scuola" id="id_scuola" placeholder="Inserisci" maxlength="10">
+								<small id="small-id_scuola"></small>
+								<br>
+							</div>	
+						</div>
+							
+							<div class="form-singolo">
+							<label>Conferma email<font color="red">*</font></label>
+							<input type="email" name="email" id="email" placeholder="example@istruzione.it" autocomplete="off">
+							<small id="small-email"></small>
+							</div>
+							
+							<div class="bottone" id="invia" style="float:left;">
+								<input name="inserisci_scuola" type="submit" value="Elimina scuola" onclick="Conf_elim()">
+							</div>
+					</form>
+				</div>
 
 
 

@@ -69,7 +69,7 @@
 							<select name="scuola" id="scuola">
 								<option value="">Seleziona</option>	
 								<?php 
-									include("../amministrazione/config.php"); 
+									include("../condivise/config.php"); 
 									/* creiamo la query ... */
 
 									$query = "SELECT id_scuola, nome_scuola, citta FROM scuola"; 
@@ -82,7 +82,7 @@
 									 
 									while ($riga = MySQLI_fetch_array($result)){
 										echo "<option value='".$riga["id_scuola"]."'>".$riga["nome_scuola"]." (".$riga["citta"].") - ".$riga["id_scuola"]."</option>";
-									   } 				 
+									} 				 
 								?>
 							 </select>
 							 <small id="small-scuola"></small>
@@ -109,6 +109,5 @@
 				<h4><font color="red">*</font>campi obbligatori</h4>
 			</div>
 		</div>
-		<script src="test.js"></script>
 	</body>
 </html>
