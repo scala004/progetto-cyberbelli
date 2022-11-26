@@ -90,7 +90,7 @@
 
 						<div class="form-singolo">
 							<label>Link video YouTube</label>
-							<input id="youtube" placeholder="www.youtube.com" >
+							<input id="youtube" name="youtube" placeholder="www.youtube.com" >
 							<small id="small-youtube"></small>
 						</div>
 

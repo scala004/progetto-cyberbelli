@@ -33,7 +33,7 @@
 				<div class="form">
 					
 					<br>
-					<form action="../amministrazione/elimina_scuola.php" id="inserimento_scuola" method="POST">
+					<form action="../amministrazione/elimina_scuola.php" id="eliminazione_scuola" method="POST">
 					
 						<div class="form-singolo">
 						
@@ -52,7 +52,10 @@
 							</div>
 							
 							<div class="bottone" id="invia" style="float:left;">
-								<input name="inserisci_scuola" type="submit" value="Elimina scuola" onclick="Conf_elim()">
+								<input name="inserisci_scuola" type="button" value="Elimina scuola" onclick="Conf_elim()">
+							</div>
+							<div class="bottone" id="resetta" style="float:left; margin-left:1%">
+								<input name="reset_campi" type="reset" onclick="resetElimScuola()">
 							</div>
 					</form>
 				</div>

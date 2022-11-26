@@ -64,7 +64,7 @@ $result = MYSQLI_QUERY($connect,$query);
 				<p>".$riga["descrizione_scuola"]."</p>
 			</div>
 			<div class='link_scuola'>
-				<a href='https://".$riga["sito"]."target='_blank'><b><p>Vai al sito ufficiale</p></b></a>
+				<a href='https://".$riga["sito"]."'target='_blank'><b><p>Vai al sito ufficiale</p></b></a>
 			</div>
 		</div>
 	</div>";

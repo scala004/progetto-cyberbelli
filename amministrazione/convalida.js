@@ -293,9 +293,10 @@ function validateYouTubeUrl(youtube) {
   }
 }
 
-function Conf_elim() {
+function Conf_elim(){
 	var cod_mecc = "";
 	var conf_email = "";
+	var verifica=true;
 	
 	cod_mecc = document.getElementById("id_scuola").value;
 	conf_email = document.getElementById("email").value;
@@ -316,7 +317,7 @@ function Conf_elim() {
     document.getElementById("small-id_scuola").innerHTML = "";
     document.getElementById("id_scuola").style.borderColor = "green";
   }
-  
+ 
     if (conf_email == "" || conf_email == "undefined") {
     document.getElementById("small-email").innerHTML =
       "L'indirizzo email è obbligatorio";
@@ -333,4 +334,17 @@ function Conf_elim() {
     document.getElementById("small-email").innerHTML = "";
     document.getElementById("email").style.borderColor = "green";
   }
+  
+  if (verifica == true) {
+    document.getElementById("eliminazione_scuola").submit();
+  }
+}
+
+function resetElimScuola(){
+
+  document.getElementById("id_scuola").style.borderColor = "#f0f0f0";
+  document.getElementById("small-id_scuola").innerHTML = "";
+
+  document.getElementById("email").style.borderColor = "#f0f0f0";
+  document.getElementById("small-email").innerHTML = "";
 }

@@ -28,7 +28,7 @@ $regione = $_POST['regione'];
 	/*
 	* 	If file is not present in the destination folder
 	*/
-	if($fileExistsFlag == 0) { 
+	if($fileExistsFlag == 0) {
 		$target = "../scuole/img/";		
 		$fileTarget = $target.$fileName;	
 		$tempFileName = $_FILES["Filename"]["tmp_name"];
@@ -43,7 +43,7 @@ $regione = $_POST['regione'];
 			}else{
 				$query = "insert into scuola values('$id','$nome','$tel','$email','$fileTarget','$desc','$sito','$indirizzo','$cap','$citta','$provincia','$regione')";   
 			}
-			$connect->query($query) or die("Error : ".mysqli_error($connect));			
+			$result = mysqli_query($connect,$query) or die (mysqli_error($connect));		
 		}
 		else {			
 			echo "Sorry !!! There was an error in uploading your file";			
@@ -56,8 +56,6 @@ $regione = $_POST['regione'];
 		echo "File <html><b><i>".$fileName."</i></b></html> already exists in your folder. Please rename the file and try again.";
 	}
 
-
-$result = mysqli_query($connect,$query) or die (mysqli_error($connect));
 
 
 // chiudo la connessione a MySQL
