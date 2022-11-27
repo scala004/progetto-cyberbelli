@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Inserimento post</title>
-		<link rel="stylesheet" href="stylesheet.css">
+		<link rel="stylesheet" href="../amministrazione/stylesheet.css">
 		<script src="../amministrazione/convalida.js" type="text/javascript"></script>
 	</head>
 	<body>
@@ -34,29 +34,19 @@
 				<div class="form">
 					
 					<br>
-					<form action="../amministrazione/inserisci_post.php" id="inserimento_post">
+					<form action="../amministrazione/inserisci_post.php" id="inserimento_post" method="POST" enctype="multipart/form-data">
 
-						<div class="card">
-							<label>Inserisci immagini, file e/o video</label>
-							<div class="drag-area">
-								<span class="visible">
-									Drag & drop image here or
-									<span class="select" role="button">Browse</span>
-								</span>
-								<span class="on-drop">Drop images here</span>
-								<input id="file" name="file" type="file" class="file" multiple />
-							</div>
-					
-							<!-- IMAGE PREVIEW CONTAINER -->
-							<div class="container"></div>
+						<div id="ddArea">
+							Drag and Drop Files Here or
+							<a class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+								Select File(s)
+							</a>
 						</div>
+						<div id="showThumb"></div>
+						<input type="file" name="file" class="d-none" id="file" multiple />
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 						<br> <br>
-						<div class="form-singolo">
-							<label>Titolo<font color="red">*</font></label>
-							<input name="titolo" id="titolo" placeholder="Inserisci" >
-							<small id="small-titolo"></small>
-						</div>
 						
 						<div class="form-singolo">
 							<label>Descrizione<font color="red">*</font></label>
@@ -109,5 +99,67 @@
 				<h4><font color="red">*</font>campi obbligatori</h4>
 			</div>
 		</div>
+		
+		<script>
+			$(document).ready(function() {
+				$("#ddArea").on("dragover", function() {
+				  $(this).addClass("drag_over");
+				  return false;
+				});
+
+				$("#ddArea").on("dragleave", function() {
+				  $(this).removeClass("drag_over");
+				  return false;
+				});
+
+				$("#ddArea").on("click", function(e) {
+				  file_explorer();
+				});
+
+				$("#ddArea").on("drop", function(e) {
+				  e.preventDefault();
+				  $(this).removeClass("drag_over");
+				  var formData = new FormData();
+				  var files = e.originalEvent.dataTransfer.files;
+				  for (var i = 0; i < files.length; i++) {
+					formData.append("file[]", files[i]);
+				  }
+				  uploadFormData(formData);
+				});
+
+				function file_explorer() {
+				  document.getElementById("selectfile").click();
+				  document.getElementById("selectfile").onchange = function() {
+					files = document.getElementById("selectfile").files;
+					var formData = new FormData();
+
+					for (var i = 0; i < files.length; i++) {
+					  formData.append("file[]", files[i]);
+					}
+					uploadFormData(formData);
+				  };
+				}
+
+				function uploadFormData(form_data) {
+				  $(".loading")
+					.removeClass("d-none")
+					.addClass("d-block");
+				  $.ajax({
+					url: "../amministrazione/inserisci_post.php",
+					method: "POST",
+					data: form_data,
+					contentType: false,
+					cache: false,
+					processData: false,
+					success: function(data) {
+					  $(".loading")
+						.removeClass("d-block")
+						.addClass("d-none");
+					  $("#showThumb").append(data);
+					}
+				  });
+				}
+			  });
+		</script>
 	</body>
 </html>

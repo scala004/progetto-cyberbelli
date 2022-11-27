@@ -293,7 +293,7 @@ function validateYouTubeUrl(youtube) {
   }
 }
 
-function Conf_elim(){
+function ElimScuola(){
 	var cod_mecc = "";
 	var conf_email = "";
 	var verifica=true;
@@ -347,4 +347,45 @@ function resetElimScuola(){
 
   document.getElementById("email").style.borderColor = "#f0f0f0";
   document.getElementById("small-email").innerHTML = "";
+}
+
+function ElimPost(){
+	var scuola = document.getElementById("scuola").selectedIndex;
+	var data = document.getElementById("post").selectedIndex;
+	var verifica=true;
+	
+	if (scuola == "" || scuola == "undefined") {
+    document.getElementById("scuola").style.borderColor = "red";
+    document.getElementById("small-scuola").innerHTML =
+      "La scuola è obbligatorio";
+	 document.getElementById("small-scuola").style.color = "red";
+	verifica = false;
+	} else {
+    document.getElementById("small-scuola").innerHTML = "";
+    document.getElementById("scuola").style.borderColor = "green";
+	}
+ 
+    if (data == "" || data == "undefined") {
+    document.getElementById("post").style.borderColor = "red";
+    document.getElementById("small-post").innerHTML =
+      "La data è obbligatoria";
+	 document.getElementById("small-post").style.color = "red";
+	verifica = false;
+	} else {
+    document.getElementById("small-post").innerHTML = "";
+    document.getElementById("post").style.borderColor = "green";
+	}
+  
+  if (verifica == true) {
+    document.getElementById("eliminazione_post").submit();
+  }
+}
+
+function resetElimPost(){
+
+  document.getElementById("scuola").style.borderColor = "#f0f0f0";
+  document.getElementById("small-scuola").innerHTML = "";
+
+  document.getElementById("post").style.borderColor = "#f0f0f0";
+  document.getElementById("small-post").innerHTML = "";
 }
