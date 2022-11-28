@@ -35,7 +35,7 @@
 		<div id="divisore">
 			<div class="content">
 				<div class="titolo">
-					Benvenuto nell'area riservate di CYBERBELLI
+					Benvenuto nell'area riservata di CYBERBELLI
 				</div>
 				<br><br>
 
