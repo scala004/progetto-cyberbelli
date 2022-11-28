@@ -382,10 +382,49 @@ function ElimPost(){
 }
 
 function resetElimPost(){
-
   document.getElementById("scuola").style.borderColor = "#f0f0f0";
   document.getElementById("small-scuola").innerHTML = "";
 
   document.getElementById("post").style.borderColor = "#f0f0f0";
   document.getElementById("small-post").innerHTML = "";
+}
+
+function validazioneLogin() {
+  var user = document.getElementById("user").value;
+  var pass = document.getElementById("pass").value;
+  var verifica = true;
+
+  if (user == "" || user == "undefined") {
+    document.getElementById("username").style.borderColor = "red";
+    document.getElementById("small-username").innerHTML =
+      "L'username è obbligatorio";
+    document.getElementById("small-username").style.color = "red";
+    verifica = false;
+  } else {
+    document.getElementById("small-username").innerHTML = "";
+    document.getElementById("username").style.borderColor = "green";
+  }
+  
+  if (pass == "" || pass == "undefined") {
+    document.getElementById("password").style.borderColor = "red";
+    document.getElementById("small-password").innerHTML =
+      "La password è obbligatoria";
+    document.getElementById("small-password").style.color = "red";
+    verifica = false;
+  } else {
+    document.getElementById("small-password").innerHTML = "";
+    document.getElementById("password").style.borderColor = "green";
+  }
+  
+  if(verifica==true){
+	document.getElementById("login").submit();
+  }
+}
+
+function resetLogin() {
+  document.getElementById("username").style.borderColor = "#f0f0f0";
+  document.getElementById("small-username").innerHTML = "";
+
+  document.getElementById("password").style.borderColor = "#f0f0f0";
+  document.getElementById("small-password").innerHTML = "";
 }

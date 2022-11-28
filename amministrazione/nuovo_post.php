@@ -16,7 +16,7 @@
 				<li><a href="#calendario">Calendario</a></li>
 				<li><a href="../scuole/scuole.php">Scuole Aderenti</a></li>
 				<li><a href="../about/about.html">About</a></li>
-				<li><a href="../amministrazione/amministrazione.html">AreaRiservata</a></li>
+				<li><a href="../amministrazione/area_riservata.php">AreaRiservata</a></li>
 			</ul>
 			<label for="nav-toggle" class="icon-burger">
 				<div class="line"></div>
@@ -24,7 +24,14 @@
 				<div class="line"></div>
 			</label>
 		</nav>
+		<?php
+			session_start();
 
+			if (isset($_SESSION['session_id'])) {
+			} else {
+				header('Location: ../amministrazione/autenticazione/autenticazione.html');
+			}
+		?>
 		<div id="divisore">
 
 			<div class="content">
