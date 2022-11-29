@@ -1,17 +1,16 @@
 <?php
-   /* connessione al database */
+$host = "172.16.12.53";
+$username = "5ibg28";
+$password = "utenti";
+$dbname = "cyberbelli";
+$dsn = "mysql:host=$host;dbname=$dbname";
 
-$hostname = "mysql.giorgi.edu";   //172.16.12.53 server linux
-$username = "5bi";
-$password = "cyberbelli";
-$dbName = "cyberbelli";
 
-/* connettiamoci  a MYSQL */
-
-$connect=MySQLI_connect($hostname, $username, $password) OR DIE("Unable to connect to MYSQL");
-
-/* selezioniamo il database*/
-
-mysqlI_select_db($connect,$dbName) or die( "Unable to select database"); 
+try{
+	$connection = new PDO($dsn, $username, $password);
+}
+catch(PDOException $error){
+	echo $error -> getMessage();
+}
 
 ?>
