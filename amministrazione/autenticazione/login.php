@@ -27,7 +27,7 @@ if (isset($_POST['username']) && isset($_POST['password'])){
 		
 		foreach ($result as $riga){
 			
-			if ($username!=$riga["USER"] || password_verify($password, $riga["PASSWORD"]==false)) {
+			if (($username!=$riga["USER"]) || (password_verify($password, $riga["PASSWORD"])==false)) {
 				echo 'Credenziali utente errate ';
 				header('Location: autenticazione.html');
 			} else{

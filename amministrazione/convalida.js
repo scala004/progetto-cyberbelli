@@ -390,8 +390,8 @@ function resetElimPost(){
 }
 
 function validazioneLogin() {
-  var user = document.getElementById("user").value;
-  var pass = document.getElementById("pass").value;
+  var user = document.getElementById("username").value;
+  var pass = document.getElementById("password").value;
   var verifica = true;
 
   if (user == "" || user == "undefined") {
