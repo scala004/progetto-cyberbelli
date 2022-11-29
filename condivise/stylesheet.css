@@ -266,6 +266,69 @@ nav .icon-burger .line {
   color: #B0B0B0;
   font-size: 18px;
 }
+/*formattazione di una scuola nella pagina about.html*/
+.container_about{
+	margin-left: 8%;
+	margin-right: 8%;
+	font-size: 18px;
+	padding: 3%;
+	margin-top: 0;
+	margin-bottom: 0;
+	color:white;
+}
+.container_about .content_about{
+  width: 100%;
+  padding: 2%;
+  box-shadow: 5px 5px 15px #202020;
+  border-radius: 3px;
+  border-width: 5px;
+  background:#353535;
+  margin-bottom: 10px;
+}
+.container_about .content_about .titolo_about{
+	font-size:28px;
+}
+.container_about .content_about .titolo_about p{
+	text-align:center;
+}
+.container_about .content_about .descrizione{
+	margin-top:20px;
+	display:flex;
+	flex-direction:column;
+	flex:nowrap;
+}
+.container_about .content_about .descrizione img{
+	width:70%;
+	height:auto;
+	align-self:center;
+	border-radius:3px;
+	margin-bottom:20px;
+}
+.container_about .content_about .descrizione .sub_about{
+	font-size:20px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.container_about .content_about .descrizione p{
+	font-size:18px;
+	margin-top:0px;
+	margin-bottom:10px;
+	margin-left:20px;
+	margin-right:20px;
+	text-align:justify;
+}
+.container_about .content_about .descrizione ol{
+	margin-left:50px;
+	margin-bottom:20px;
+}
+.container_about .content_about .descrizione ul{
+	margin-left:50px;
+	margin-bottom:20px;
+}
+.container_about .content_about .descrizione a {
+  text-decoration: underline;
+   color: #B0B0B0;
+}
 @media screen and (max-width: 768px) {
   /*inserire in questa sezione tutti gli attributi per la visualizzazione mobile*/
   /*formattazione barra di navigazione mobile*/
@@ -343,4 +406,5 @@ nav .icon-burger .line {
     margin-right: 5%;
     margin-top: 5%;
   }
+  
 }
