@@ -11,7 +11,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Cancellazione post</title>
-		<link rel="stylesheet" href="stylesheet.css">
+		<link rel="stylesheet" href="../condivise/stylesheet.css">
 		<script src="../amministrazione/convalida.js" type="text/javascript"></script>
 	</head>
 	<body>
@@ -32,9 +32,12 @@
 			</label>
 		</nav>
 		<div id="divisore">
-            <div class="content">
-                <div class="titolo">
-					Elimina post
+			<p></p>
+		</div>
+		<div class="container_about">
+			<div class="content_about">
+				<div class="titolo_about">
+					<p>Elimina post</p>
 				</div>
 				<div class="form">
 					
@@ -51,13 +54,16 @@
 
 									$query = "SELECT id_scuola, nome_scuola, citta FROM scuola"; 
 
+									$statement = $connection->prepare($query);
 									/* ... ed eseguiamola */
 
-									$result = MYSQLI_QUERY($connect,$query);
+									$statement->execute();
 
 									/* Stampa i risultati della query*/
+
+									$result = $statement->fetchAll();
 									 
-									while ($riga = MySQLI_fetch_array($result)){
+									foreach ($result as $riga){
 										echo "<option value='".$riga["id_scuola"]."'>".$riga["nome_scuola"]." (".$riga["citta"].") - ".$riga["id_scuola"]."</option>";
 									} 				 
 								?>
@@ -72,15 +78,17 @@
 								<?php 
 									/* creiamo la query ... */
 
-									$query = "SELECT data FROM materialee"; 
+									$query = "SELECT data FROM materiale"; 
 
+									$statement = $connection->prepare($query);
 									/* ... ed eseguiamola */
 
-									$result = MYSQLI_QUERY($connect,$query);
+									$statement->execute();
 
 									/* Stampa i risultati della query*/
-									 
-									while ($riga = MySQLI_fetch_array($result)){
+
+									$result = $statement->fetchAll();
+									foreach ($result as $riga){
 										echo "<option value='".$riga["data"]."'>".$riga["data"]."</option>";
 									} 				 
 								?>
@@ -88,20 +96,17 @@
 							<small id="small-post"></small>
 						</div>
 						
-							
-							<div class="bottone" id="invia" style="float:left;">
-								<input name="elimina_post" type="button" value="Elimina post" onclick="ElimPost()">
-							</div>
-							<div class="bottone" id="resetta" style="float:left; margin-left:1%">
-								<input name="reset_campi" type="reset" onclick="resetElimPost()">
-							</div>
+							<p>
+								<div class="bottone" id="invia" style="float:left;">
+									<input name="elimina_post" type="button" value="Elimina post" onclick="ElimPost()">
+								</div>
+								<div class="bottone" id="resetta" style="float:left; margin-left:1%">
+									<input name="reset_campi" type="reset" onclick="resetElimPost()">
+								</div>
+							</p>
 					</form>
-				</div>
-
-
-
+				</div><br>
             </div>
         </div>
-
 	</body>
 </html>

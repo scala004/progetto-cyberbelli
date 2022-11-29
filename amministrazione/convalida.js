@@ -417,7 +417,7 @@ function validazioneLogin() {
   }
   
   if(verifica==true){
-	document.getElementById("login").submit();
+	document.getElementById("form_login").submit();
   }
 }
 

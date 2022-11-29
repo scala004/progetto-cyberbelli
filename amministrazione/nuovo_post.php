@@ -11,7 +11,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Inserimento post</title>
-		<link rel="stylesheet" href="../amministrazione/stylesheet.css">
+		<link rel="stylesheet" href="../condivise/stylesheet.css">
 		<script src="../amministrazione/convalida.js" type="text/javascript"></script>
 	</head>
 	<body>
@@ -32,13 +32,15 @@
 			</label>
 		</nav>
 		<div id="divisore">
-
-			<div class="content">
-				<div class="titolo">
-					Inserimento nuovo post
+			<p></p>
+		</div>
+		<div class="container_about">
+			<div class="content_about">
+				<div class="titolo_about">
+					<p>Inserimento nuovo post</p>
 				</div>
 				<div class="form">
-					
+			
 					<br>
 					<form action="../amministrazione/inserisci_post.php" id="inserimento_post" method="POST" enctype="multipart/form-data">
 
@@ -69,14 +71,16 @@
 									/* creiamo la query ... */
 
 									$query = "SELECT id_scuola, nome_scuola, citta FROM scuola"; 
+									$statement = $connection->prepare($query);
 
 									/* ... ed eseguiamola */
 
-									$result = MYSQLI_QUERY($connect,$query);
+									$statement->execute();
+									$result = $statement->fetchAll();
 
 									/* Stampa i risultati della query*/
 									 
-									while ($riga = MySQLI_fetch_array($result)){
+									foreach ($result as $riga){
 										echo "<option value='".$riga["id_scuola"]."'>".$riga["nome_scuola"]." (".$riga["citta"].") - ".$riga["id_scuola"]."</option>";
 									} 				 
 								?>

@@ -11,7 +11,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Cancellazione scuola</title>
-		<link rel="stylesheet" href="stylesheet.css">
+		<link rel="stylesheet" href="../condivise/stylesheet.css">
 		<script src="../amministrazione/convalida.js" type="text/javascript"></script>
 	</head>
 	<body>
@@ -32,9 +32,12 @@
 			</label>
 		</nav>
 		<div id="divisore">
-            <div class="content">
-                <div class="titolo">
-					Elimina scuola
+			<p></p>
+		</div>
+		<div class="container_about">
+			<div class="content_about">
+				<div class="titolo_about">
+					<p>Elimina scuola</p>
 				</div>
 				<div class="form">
 					
@@ -57,14 +60,16 @@
 							<small id="small-email"></small>
 							</div>
 							
-							<div class="bottone" id="invia" style="float:left;">
-								<input name="inserisci_scuola" type="button" value="Elimina scuola" onclick="ElimScuola()">
-							</div>
-							<div class="bottone" id="resetta" style="float:left; margin-left:1%">
-								<input name="reset_campi" type="reset" onclick="resetElimScuola()">
-							</div>
+							<p>
+								<div class="bottone" id="invia" style="float:left;">
+									<input name="inserisci_scuola" type="button" value="Elimina scuola" onclick="ElimScuola()">
+								</div>
+								<div class="bottone" id="resetta" style="float:left; margin-left:1%">
+									<input name="reset_campi" type="reset" onclick="resetElimScuola()">
+								</div>
+							</p>
 					</form>
-				</div>
+				</div><br>
             </div>
         </div>
 	</body>

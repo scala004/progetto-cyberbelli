@@ -69,8 +69,10 @@ foreach ($result as $riga){
 				<video controls>
 					<source src='".$riga["percorso"]."' type='video/avi'>
 				</video>";	
-			}
-					
+			}			
+		}else if($riga["tipo"]==".pdf"){
+			echo" 
+			<embed src='".$riga["percorso"]."' width='600px' height='800px'/>";
 		}
 		
 		echo"

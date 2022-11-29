@@ -19,18 +19,22 @@ if (isset($_POST['username']) && isset($_POST['password'])){
             FROM login
         ";
 		
-		$result = MYSQLI_QUERY($connect,$query);
+		$statement = $connection->prepare($query);
+
+		$statement->execute();
+
+		$result = $statement->fetchAll();
 		
-		while($riga = MySQLI_fetch_array($result)){
+		foreach ($result as $riga){
 			
 			if ($username!=$riga["USER"] || password_verify($password, $riga["PASSWORD"]==false)) {
-				echo 'Credenziali utente errate '; //CAPIRE COSA FAR VISUALIZZARE AL TIZIO
-                header('Location: ../autenticazione/autenticazione.html');
+				echo 'Credenziali utente errate ';
+				header('Location: autenticazione.html');
 			} else{
 				session_regenerate_id();
 				$_SESSION['session_id'] = session_id();
 				$_SESSION['session_user'] = $riga['USER'];
-			   header("Location: ../../amministrazione/area_riservata.php");
+			    header("Location: ../../amministrazione/area_riservata.php");
 				exit;
 			}
 		}		
