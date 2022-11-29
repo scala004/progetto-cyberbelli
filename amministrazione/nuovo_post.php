@@ -45,9 +45,8 @@
 					<form action="../amministrazione/inserisci_post.php" id="inserimento_post" method="POST" enctype="multipart/form-data">
 
 						<div id="ddArea">
-							Drag and Drop Files Here or
+							Seleziona file
 							<a class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-								Select File(s)
 							</a>
 						</div>
 						<div id="showThumb"></div>

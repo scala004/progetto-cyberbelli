@@ -18,10 +18,15 @@ $regione = $_POST['regione'];
 	/* 
 	*	Checking whether the file already exists in the destination folder 
 	*/
-	$query = "SELECT logo_scuola FROM scuola WHERE logo_scuola='$fileName'";
-	$result = $connect->query($query) or die("Error : ".mysqli_error($connect));
-	while($row = mysqli_fetch_array($result)) {
-		if($row['filename'] == $fileName) {
+	$query = "SELECT logo_scuola FROM scuola WHERE logo_scuola= :logo_scuola";
+	
+	$statement = $connection->prepare($query);
+	$statement->bindParam(':logo_scuola', $fileName);
+	$statement->execute();
+	$result = $statement->fetchAll();
+	
+	foreach ($result as $riga){
+		if($riga['filename'] == $fileName) {
 			$fileExistsFlag = 1;
 		}		
 	}
@@ -29,7 +34,7 @@ $regione = $_POST['regione'];
 	* 	If file is not present in the destination folder
 	*/
 	if($fileExistsFlag == 0) {
-		$target = "../scuole/img/";		
+		$target = "../condivise/loghi/";		
 		$fileTarget = $target.$fileName;	
 		$tempFileName = $_FILES["Filename"]["tmp_name"];
 		$result = move_uploaded_file($tempFileName,$fileTarget);
@@ -43,7 +48,8 @@ $regione = $_POST['regione'];
 			}else{
 				$query = "insert into scuola values('$id','$nome','$tel','$email','$fileTarget','$desc','$sito','$indirizzo','$cap','$citta','$provincia','$regione')";   
 			}
-			$result = mysqli_query($connect,$query) or die (mysqli_error($connect));		
+			$statement->bindParam(':logo_scuola', $fileName);
+			$statement = $db ->prepare($query);		
 		}
 		else {			
 			echo "Sorry !!! There was an error in uploading your file";			
@@ -56,9 +62,4 @@ $regione = $_POST['regione'];
 		echo "File <html><b><i>".$fileName."</i></b></html> already exists in your folder. Please rename the file and try again.";
 	}
 
-
-
-// chiudo la connessione a MySQL
-mysqli_close($connect);
-  
 ?>

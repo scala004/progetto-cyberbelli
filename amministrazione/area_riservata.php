@@ -42,8 +42,8 @@
 					<br><br>
 
 					<div style="margin:auto;width:300px;height:200px;">
-						<li><a href="../amministrazione/elimina_scuola.php">Elimina una scuola</a></li> 
 						<ul>
+							<li><a href="../amministrazione/elimina_scuola.php">Elimina una scuola</a></li> 
 							<li><a href="../amministrazione/nuova_scuola.php">Inserisci una nuova scuola</a></li>
 							<li><a href="../amministrazione/nuovo_post.php">Inserisci un nuovo post</a></li>
 							<li><a href="../amministrazione/elimina_post.php">Elimina un post</a></li>
