@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if (isset($_SESSION['session_id'])) {
+	} else {
+		header('Location: ../amministrazione/autenticazione/autenticazione.html');
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,14 +31,6 @@
 				<div class="line"></div>
 			</label>
 		</nav>
-		<?php
-			session_start();
-
-			if (isset($_SESSION['session_id'])) {
-			} else {
-				header('Location: ../amministrazione/autenticazione/autenticazione.html');
-			}
-		?>
 		<div id="divisore">
             <div class="content">
                 <div class="titolo">

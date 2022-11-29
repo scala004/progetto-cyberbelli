@@ -30,48 +30,47 @@
 
 
 <?php 
-include("../condivise/config.php"); 
-/* creiamo la query ... */
+  include("../condivise/config.php"); 
 
-$query = "SELECT * FROM scuola"; 
+  $query = "SELECT * FROM scuola"; 
 
-/* ... ed eseguiamola */
+  $statement = $connection->prepare($query);
 
-$result = MYSQLI_QUERY($connect,$query);
+  $statement->execute();
 
-/* Stampa i risultati della query*/
- 
- while ($riga = MySQLI_fetch_array($result)){
-	
+  $result = $statement->fetchAll();
 
-	echo "
-	<div class='container_scuola'>
-		<div class='head'>
-			<div class='avatar'>
-				<a href='https://".$riga["sito"]."' target='_blank'>
-					<img src='".$riga["logo_scuola"]."' alt='Logo Scuola'>
-				</a>
-			</div>
-			<div class='username_scuola'>
-				<p>".$riga["nome_scuola"]."</p>
-				<p>".$riga["indirizzo"]."</p>
-				<p>".$riga["cap"]." ".$riga["citta"].", ".$riga["provincia"]."</p>
-				<p>".$riga["regione"]."</p>
-			</div>
-		</div>
-		<div class='content_scuola'>
-			<div class='descrizione'>
-				<p>".$riga["descrizione_scuola"]."</p>
-			</div>
-			<div class='link_scuola'>
-				<a href='https://".$riga["sito"]."'target='_blank'><b><p>Vai al sito ufficiale</p></b></a>
-			</div>
-		</div>
-	</div>";
+  foreach ($result as $riga){
+    
+    
+    echo "
+    <div class='container_scuola'>
+      <div class='head'>
+        <div class='avatar'>
+          <a href='".$riga["sito"]."' target='_blank'>
+            <img src='".$riga["logo_scuola"]."' alt='Logo Scuola'>
+          </a>
+        </div>
+        <div class='username_scuola'>
+          <p>".$riga["nome_scuola"]."</p>
+          
+        </div>
+      </div>
+      <div class='content_scuola'>
+        <div class='descrizione'>
+          <p>".$riga["descrizione_scuola"]."</p>
+          <p>".$riga["indirizzo"]."</p>
+          <p>".$riga["cap"]." ".$riga["citta"].", ".$riga["provincia"]."</p>
+          <p>".$riga["regione"]."</p>
+        </div>
+        <div class='link_scuola'>
+          <a href='".$riga["sito"]."'target='_blank'><b><p>Vai al sito ufficiale</p></b></a>
+        </div>
+      </div>
+    </div>";
 
-   } 
- 
+    } 
  ?>
  
-   </body>
+  </body>
 </html>
