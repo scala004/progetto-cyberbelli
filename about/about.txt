@@ -1,0 +1,99 @@
+<!--Questo file contiene i div, le classi e gli id necessari alla formattazione della pagina-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About</title>
+<link rel="stylesheet" href="..\condivise\stylesheet.css">
+
+</head>
+<body>
+<nav>
+	<input id="nav-toggle" type="checkbox">
+	<div class="logo">CYBER<strong>BELLI</strong></div>
+	<ul class="links">
+		<li><a href="">Home</a></li>
+		<li><a href="">Calendario</a></li>
+		<li><a href="">Scuole</a></li>
+		<li><a href="">About</a></li>
+		<li><a href="">Amministrazione</a></li>
+	</ul>
+	<label for="nav-toggle" class="icon-burger">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+	</label>
+</nav>
+
+<div id="divisore">
+<p></p>
+</div>
+<div class="container_about">
+	<div class="content_about">
+		<div class="titolo_about">
+			<p>Il progetto "CYBER<strong>BELLI</strong>"</p>
+		</div>
+		<div class="descrizione">
+			<img src="..\condivise\logo_CYBER.jpg"> 
+			
+			<div class="sub_about"><p><b>Le azioni intraprese</b></p></div>
+			<p>
+			✓ Azioni «volte a contrastare il fenomeno del cyberbullismo e sensibilizzare all’uso
+			consapevole della rete internet, educando le studentesse e gli studenti alla
+			consapevolezza, trasversale alle diverse discipline curricolari, dei diritti e dei doveri
+			connessi all'utilizzo delle tecnologie informatiche» (Decreto AOODPIT.1176 del 18
+			maggio 2022);
+			</p>
+			<p>
+			✓ Azioni a «sostegno alla relazionalità mediante la prevenzione e il contrasto al
+			cyberbullismo, aggiornandone il raggio di intervento in ragione della situazione
+			politica, sociale ed etica presente, includendo l’educazione a corrette relazioni
+			interpersonali e al disconoscimento di ogni forma di violenza. (Nota del Capo
+			Dipartimento per il sistema educativo di istruzione e formazione AOODPIT.994 del 11 maggio
+			2022).
+			</p>
+			<div class="sub_about"><p><b>I partner che collaborano al progetto</b></p></div>
+			<ul>
+				<li><a href="https://adocnazionale.it/portfolio/brindisi/" target="_blank">ADOC - Brindisi</a></li>
+				<li><a href="https://www.commissariatodips.it/" target="_blank">Polizia Postale e delle Comunicazioni</a></li>
+				<li><a href="https://www.bibliotecadeleo.it/" target="_blank">Biblioteca Arc. A. De Leo - Brindisi</a></li>
+			</ul>	
+			<div class="sub_about"><p><b>Incontri con la Psicologa dell’ADOC</b></p></div>
+			<ol>
+				<li>Incontri rivolti agli alunni</li>
+				<li>Incontri pomeridiani per i genitori</li>
+			</ol>
+			<p>Tematiche trattate negli incontri:</p>
+			<ul>
+				<li> Bullismo e cyberbullismo: differenze di spazio, tempo e modalità</li>
+				<li>Definizione del sé e relazione con l’altro</li>
+				<li>Dinamiche di gruppo</li>
+				<li>Il rapporto tra umiliazione e potere</li>
+				<li>Azioni di contrasto: responsabilizzazione e deresponsabilizzazione</li>
+			</ul>
+			
+			<div class="sub_about"><p><b>Incontri per gli alunni con il team di legali dell’ADOC</b></p></div>
+			<p>Tematiche trattate:</p>
+			<ul>
+				<li>Policy e linee guida dei principali social network come TikTok e Instagram</li>
+				<li>Utilizzo consapevole delle foto e loro condivisione, rischi e pericoli</li>
+				<li>Sanzioni scolastiche</li>
+				<li>Sanzioni disciplinari che può emettere il "pool" anticyberbullismo</li>
+				<li>Reati e sanzioni penali per le fattispecie di cyberbullismo e revenge porn.</li>
+			</ul>
+			<br>
+			<p>
+			I docenti di Informatica dell’ITT G. Giorgi hanno aiutato i propri studenti della classe 5BI A.s. 2022/2023
+			a creare questo sito web dedicato in cui si condivideranno i lavori prodotti dai ragazzi coinvolti nel
+			progetto. Potranno essere pubblicizzate e condivise anche altre iniziative promosse dalle scuole
+			della rete sulla prevenzione dal cyberbullismo e sul miglioramento del benessere nelle aule.
+			L’utilizzo e l’aggiornamento continuo di questo spazio virtuale proseguirà anche oltre il termine
+			naturale del progetto.
+			</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>
