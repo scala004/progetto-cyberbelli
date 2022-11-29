@@ -11,7 +11,7 @@
       <input id="nav-toggle" type="checkbox" />
       <div class="logo">CYBER<strong>BELLI</strong></div>
       <ul class="links">
-        <li><a href="../home/home.html">Home</a></li>
+        <li><a href="../home/home.php">Home</a></li>
         <li><a href="#calendario">Calendario</a></li>
         <li><a href="scuole.php">Scuole Aderenti</a></li>
         <li><a href="../about/about.html">About</a></li>
