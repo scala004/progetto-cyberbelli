@@ -26,10 +26,9 @@ if (isset($_POST['username']) && isset($_POST['password'])){
 		$result = $statement->fetchAll();
 		
 		foreach ($result as $riga){
-			
-			if (($username!=$riga["USER"]) || (password_verify($password, $riga["PASSWORD"])==false)) {
-				echo 'Credenziali utente errate ';
+			if (($username!=$riga["USER"]) || ($password!=$riga["PASSWORD"])) {
 				header('Location: autenticazione.html');
+				echo 'Credenziali utente errate ';
 			} else{
 				session_regenerate_id();
 				$_SESSION['session_id'] = session_id();

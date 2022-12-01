@@ -5,28 +5,31 @@ $desc=$_POST['descrizione'];
 $youtube=$_POST['youtube'];
 
 
-if (empty($youtube)){
-	$query = "insert into materialee(id_scuola,descrizione_materiale,tipo,percorso) values ('$id','$desc','TIPO','PERCORSO')";
-}else{
-	$query = "insert into materialee values('','$id','$desc','TIPO','PERCORSO','$youtube','')";
-}
+define("UPLOAD_DIR", "../condivise/materiale");
 
-$result = mysqli_query($connect,$query) or die (mysqli_error($connect));
-
-
-//DA FINIRE E SISTEMARE
-$imageData = '';
-if (isset($_FILES['file']['name'][0])) {
-  foreach ($_FILES['file']['name'] as $keys => $values) {
-    $fileName = uniqid() . '_' . $_FILES['file']['name'][$keys];
-    if (move_uploaded_file($_FILES['file']['tmp_name'][$keys], 'uploads/' . $fileName)) {
-      $imageData .= '<img src="uploads/' . $fileName . '" class="thumbnail" />';
+if(isset($_POST['action']) and $_POST['action'] == 'upload')
+{
+    if(isset($_FILES['user_file']))
+    {
+        $file = $_FILES['user_file'];
+        if($file['error'] == UPLOAD_ERR_OK and is_uploaded_file($file['tmp_name']))
+        {
+			$ext = explode(".", $file['tmp_name');
+			$tipo= $ext[count($ext)-1];  
+            move_uploaded_file($file['tmp_name'], UPLOAD_DIR.$file['name']);
+			$percorso='../condivise/materiale/'.$file;
+        }
     }
-  }
 }
-echo $imageData;
 
-// chiudo la connessione a MySQL
-mysqli_close($connect);
+if (empty($youtube)){
+	$query = "insert into materialee(id_scuola,descrizione_materiale,tipo,percorso) values ('$id','$desc','$tipo','$percorso')";
+}else{
+	$query = "insert into materialee values('','$id','$desc','$tipo','$percorso','$youtube','')";
+}
+
+$statement = $connection->prepare($query);	
+$statement->execute();
+
   
 ?>

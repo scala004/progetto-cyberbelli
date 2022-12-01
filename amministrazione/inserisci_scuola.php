@@ -48,8 +48,8 @@ $regione = $_POST['regione'];
 			}else{
 				$query = "insert into scuola values('$id','$nome','$tel','$email','$fileTarget','$desc','$sito','$indirizzo','$cap','$citta','$provincia','$regione')";   
 			}
-			$statement->bindParam(':logo_scuola', $fileName);
-			$statement = $db ->prepare($query);		
+			$statement = $connection->prepare($query);	
+			$statement->execute();
 		}
 		else {			
 			echo "Sorry !!! There was an error in uploading your file";			
@@ -61,5 +61,7 @@ $regione = $_POST['regione'];
 	else {
 		echo "File <html><b><i>".$fileName."</i></b></html> already exists in your folder. Please rename the file and try again.";
 	}
+
+	//header("location: ../amministrazione/nuova_scuola.php");
 
 ?>
