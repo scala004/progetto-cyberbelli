@@ -37,7 +37,7 @@
 			<div class="container_about">
 				<div class="content_about">
 					<div class="titolo">
-						Benvenuto nell'area riservata di CYBERBELLI
+						<p>Benvenuto nell'area riservata di CYBERBELLI</p>
 					</div>
 					<br><br>
 

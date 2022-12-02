@@ -30,6 +30,16 @@
 <?php
 include("../condivise/config.php"); 
 
+function UserAgentRegCheck($regText){ 
+	$useragent = $_SERVER['HTTP_USER_AGENT'];
+	return preg_match('@('.$regText.')@', $useragent);
+}
+
+function isMobile(){
+	return UserAgentRegCheck('iPad|iPod|iPhone|Android|BlackBerry|SymbianOS|SCH-M\d+|Opera Mini|Windows CE|Nokia|SonyEricsson|webOS|PalmOS');
+
+}
+
 $query="SELECT * FROM materiale INNER JOIN scuola ON materiale.id_scuola = scuola.id_scuola";
 
 $statement = $connection->prepare($query);
@@ -70,9 +80,9 @@ foreach ($result as $riga){
 					<source src='".$riga["percorso"]."' type='video/avi'>
 				</video>";	
 			}			
-		}else if($riga["tipo"]=="pdf"){
+		}else if($riga["tipo"]=="pdf" && !isMobile()){
 			echo" 
-			<embed src='".$riga["percorso"]."' width='600px' height='800px'/>";
+			<embed src='".$riga["percorso"]."' width='100%' height='800px'/>";
 		}
 		
 		echo"
@@ -85,6 +95,14 @@ foreach ($result as $riga){
 						<div>
 							<img src='../condivise/icone/youtube.png' style='float:left;width:20px;height:20px;'>
 							<p><a href='".$riga["youtube"]."'target='_blank'>Guarda video su youtube</a><p>
+						</div>";
+				}
+				
+				if($riga["tipo"]=="pdf"){
+					echo"
+						<div>
+							<img src='../condivise/icone/pdf.png' style='float:left;width:20px;height:20px;'>
+							<p><a href='".$riga["percorso"]."'>".basename($riga["percorso"])."</a><p>
 						</div>";
 				}
 				
