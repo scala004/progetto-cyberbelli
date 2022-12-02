@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../condivise/favicon/icona scuole.png" type="image/png" />
     <title>Scuole aderenti</title>
     <link rel="stylesheet" href="../condivise/stylesheet.css" />
   </head>
