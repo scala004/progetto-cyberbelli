@@ -51,26 +51,26 @@ foreach ($result as $riga){
 			<div class='media'>";
 			
 
-		if($riga["tipo"]==".jpg" || $riga["tipo"]==".png" || $riga["tipo"]==".jpeg"){			
+		if($riga["tipo"]=="jpg" || $riga["tipo"]=="png" || $riga["tipo"]=="jpeg"){			
 			echo "<img src='".$riga["percorso"]."'>";
-		}else if($riga["tipo"]==".mp4" || $riga["tipo"]==".mkv" || $riga["tipo"]==".avi") {
-			if($riga["tipo"]==".mp4"){
+		}else if($riga["tipo"]=="mp4" || $riga["tipo"]=="mkv" || $riga["tipo"]=="avi") {
+			if($riga["tipo"]=="mp4"){
 				echo"
 				<video controls>
 					<source src='".$riga["percorso"]."' type='video/mp4'>
 				</video>";
-			}else if($riga["tipo"]==".mkv"){
+			}else if($riga["tipo"]=="mkv"){
 				echo"
 				<video controls>
 					<source src='".$riga["percorso"]."' type='video/mkv'>
 				</video>";
-			}else if($riga["tipo"]==".avi"){
+			}else if($riga["tipo"]=="avi"){
 				echo"
 				<video controls>
 					<source src='".$riga["percorso"]."' type='video/avi'>
 				</video>";	
 			}			
-		}else if($riga["tipo"]==".pdf"){
+		}else if($riga["tipo"]=="pdf"){
 			echo" 
 			<embed src='".$riga["percorso"]."' width='600px' height='800px'/>";
 		}
