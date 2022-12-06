@@ -23,9 +23,9 @@ if(isset($_POST['action']) and $_POST['action'] == 'upload')
 }
 
 if (empty($youtube)){
-	$query = "insert into materialee(id_scuola,descrizione_materiale,tipo,percorso) values ('$id','$desc','$tipo','$percorso')";
+	$query = "insert into materiale(id_scuola,descrizione_materiale,tipo,percorso) values ('$id','$desc','$tipo','$percorso')";
 }else{
-	$query = "insert into materialee values('','$id','$desc','$tipo','$percorso','$youtube','')";
+	$query = "insert into materiale values('','$id','$desc','$tipo','$percorso','$youtube','')";
 }
 
 $statement = $connection->prepare($query);	
