@@ -14,7 +14,7 @@ if(isset($_POST['action']) and $_POST['action'] == 'upload')
         $file = $_FILES['user_file'];
         if($file['error'] == UPLOAD_ERR_OK and is_uploaded_file($file['tmp_name']))
         {
-			$ext = explode(".", $file['tmp_name');
+			$ext = explode(".", $file['tmp_name']);
 			$tipo= $ext[count($ext)-1];  
             move_uploaded_file($file['tmp_name'], UPLOAD_DIR.$file['name']);
 			$percorso='../condivise/materiale/'.$file;
